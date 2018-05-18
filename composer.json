@@ -1,0 +1,20 @@
+{
+  "name": "rattique/tutorials-pl-php",
+  "description": "Tutorial RabbitMQ dla środowiska PHP",
+  "keywords": ["RabbitMQ", "AMQP 0-9-x", "PHP", "php-amqplib", "RattiQue"],
+  "type": "project",
+  "license": "MIT",
+  "homepage" : "https://www.rabbitmq.eu/",
+  "authors": [
+    {
+      "name": "Tomasz Kuter",
+      "email": "tkuter@loculus.pl",
+      "homepage": "https://tomaszkuter.com/en/"
+    }
+  ],
+  "require": {
+    "ext-bcmath": "*",
+    "ext-mbstring": "*",
+    "php-amqplib/php-amqplib": ">=2.7.2"
+  }
+}
