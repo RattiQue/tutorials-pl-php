@@ -2,7 +2,7 @@
 
 Celem kursu jest zapoznanie się z podstawami korzystania z systemu RabbitMQ wraz z serwerem [PHP](https://php.net/) i biblioteką [php-amqplib](https://github.com/php-amqplib/php-amqplib).
 
-Kurs przygotowany na potrzeby serwisu [RabbitMQ Europe](https://www.rabbitmq.eu/pl/) - Internetowego Kompedium Wiedzy na temat RabbitMQ.
+Kurs przygotowany na potrzeby serwisu [RattiQue](https://www.rattique.com/pl/) - Internetowego Kompedium Wiedzy na temat RabbitMQ.
 
 # Elementy kursu
 
@@ -26,4 +26,4 @@ Kurs przygotowany na potrzeby serwisu [RabbitMQ Europe](https://www.rabbitmq.eu/
 
 Wszystkim zainteresowanym nieniejszymi przykładami życzymy wspaniałej podróży po meandrach systemu RabbitMQ :)
 
-Zespół RabbitMQ Europe
+Zespół RattiQue
