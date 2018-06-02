@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/shutdown2.php';
+require_once __DIR__ . '/shutdown.php';
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 
@@ -18,11 +18,6 @@ $channel->queue_bind($queueName, $exchangeName);
 echo sprintf(' [*] Oczekiwanie na wiadomości w %s.', $queueName), "\n";
 echo '     Naciśnij CTRL+C aby zakończyć.', "\n";
 
-$callback = function($message) {
-    echo " [x] Odebrano ", $message->body, "\n";
-    echo " [x] Zrobione", "\n";
-};
-
 $channel->basic_consume(
     $queueName,
     '',
@@ -30,7 +25,9 @@ $channel->basic_consume(
     true,
     false,
     false,
-    $callback
+    function($message) {
+        echo " [x] Odebrano ", $message->body, "\n";
+    }
 );
 
 register_shutdown_function('shutdown', $channel, $connection);

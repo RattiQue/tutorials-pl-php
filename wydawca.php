@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/shutdown.php';
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
@@ -13,7 +14,7 @@ $exchangeName = 'empik';
 $channel->exchange_declare($exchangeName, 'fanout', false, false, false);
 
 $date  = new DateTime();
-$issue = ((int) $date->format('n')) . '/' . $date->format('Y');
+$issue = ((int) $date->format('n') + 1) . '/' . $date->format('Y');
 
 $data = implode(' ', array_slice($argv, 1));
 
@@ -27,5 +28,4 @@ $channel->basic_publish($message, $exchangeName);
 
 echo " [x] Wysłano ", $data, "\n";
 
-$channel->close();
-$connection->close();
+register_shutdown_function('shutdown', $channel, $connection);
