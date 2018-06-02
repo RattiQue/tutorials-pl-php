@@ -16,7 +16,7 @@ list($queueName, ,) = $channel->queue_declare('', false, false, true, false);
 
 $severities = array_slice($argv, 1);
 
-if (empty($severities )) {
+if (empty($severities)) {
     file_put_contents('php://stderr', "Korzystanie: $argv[0] [info] [warning] [error]\n");
     exit(1);
 }
